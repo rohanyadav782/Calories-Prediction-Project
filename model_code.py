@@ -23,7 +23,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # --- Load dataset ---
-data = pd.read_csv(r"C:\Users\91788\Desktop\Python\Data Science\linear regression\Calorie_Prediction_Project\main_file\dataset.csv")
+data = pd.read_csv("dataset.csv")
 
 # --- Display basic information ---
 print(data.head())
