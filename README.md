@@ -67,7 +67,7 @@ Calories-Prediction-Project/
 # How to Run the Project Locally
 
 # Step 1: Clone the repository
- git clone https://github.com/rohanyadav782/Calories-Prediction-Project.git
+- git clone https://github.com/rohanyadav782/Calories-Prediction-Project.git
 
 # Step 2: Navigate to the project directory
 - cd Calories-Prediction-Project
@@ -76,4 +76,4 @@ Calories-Prediction-Project/
 - pip install -r requirements.txt
 
 # Step 4: Run the Streamlit application
-streamlit run app.py OR python -m streamlit run app.py
+- streamlit run app.py OR python -m streamlit run app.py
