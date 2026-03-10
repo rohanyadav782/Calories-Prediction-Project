@@ -46,9 +46,8 @@
    - Integrated the trained model for live predictions
 
 
-## 📂 Project Structure
-
-Calories-Prediction-Project/
+# Project Structure
+ Calories-Prediction-Project/
 │
 ├── app.py # Streamlit web application
 
