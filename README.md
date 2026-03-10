@@ -47,16 +47,12 @@
 
 
 # Project Structure
-Calories-Prediction-Project
-├── app.py # Streamlit web application
-
-├── dataset.csv # Dataset used for model training
-
-├── model.pkl # Trained machine learning model
-
-├── requirements.txt # Project dependencies
-
-└── README.md # Project documentation
+Calories-Prediction-Project/
+ - app.py # Streamlit web application
+ - dataset.csv # Dataset used for model training
+ - model.pkl # Trained machine learning model
+ - requirements.txt # Project dependencies
+ - README.md # Project documentation
 
 # Tech Stack
 
