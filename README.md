@@ -7,7 +7,7 @@
 - The trained regression model is integrated into an interactive **Streamlit web application** that provides real-time predictions.
 
 # Input Features
- -The model uses the following inputs:
+- The model uses the following inputs:
   - Gender
   - Age
   - Height (cm)
