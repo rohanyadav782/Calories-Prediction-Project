@@ -47,6 +47,7 @@
 
 
 ## 📂 Project Structure
+
 Calories-Prediction-Project/
 │
 ├── app.py # Streamlit web application
