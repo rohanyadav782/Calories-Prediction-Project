@@ -51,6 +51,7 @@ Calories-Prediction-Project/
  - app.py # Streamlit web application
  - dataset.csv # Dataset used for model training
  - model.pkl # Trained machine learning model
+ - model_code # Build machine learning model
  - requirements.txt # Project dependencies
  - README.md # Project documentation
 
