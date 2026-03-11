@@ -30,6 +30,7 @@ loaded_data = dataset["data"]
 about_project = dataset["About_Project"]
 feature_coefficient = dataset["Feature_Co-efficient"]
 model_evaluation = dataset["model_evaluation"]
+password = dataset["password"]
 
 # --- DATABASE CONNECTION ---
 # def connect_db():
@@ -118,7 +119,7 @@ elif menu == "Database Records":
         if sub_option == "Show Full Records":
             password_data = st.text_input("Enter admin password")
             
-            if password_data == dataset.password:
+            if password_data == password:
                 cursor.execute("SELECT * FROM predicted_dataset")
                 rows = cursor.fetchall()
                 columns = [desc[0] for desc in cursor.description]
