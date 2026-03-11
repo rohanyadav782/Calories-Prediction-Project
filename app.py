@@ -122,7 +122,6 @@ elif menu == "Database Records":
             rows = cursor.fetchall()
             columns = [desc[0] for desc in cursor.description]
             df = pd.DataFrame(rows, columns=columns)
-            st.success("Access Granted")
             st.dataframe(df)
 
             # --- DOWNLOAD BUTTON ---
