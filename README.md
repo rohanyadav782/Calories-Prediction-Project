@@ -63,6 +63,7 @@ Calories-Prediction-Project/
 - **Scikit-learn**
 - **Matplotlib / Seaborn**
 - **Streamlit**
+- **PostgreSQL**
 - **Git & GitHub**
 
 # How to Run the Project Locally
