@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings
 import os
+from dotenv import load_dotenv
 warnings.filterwarnings("ignore")
 
 # --- PAGE TITLE ---
@@ -21,6 +22,8 @@ def load_model():
     return dataset
 
 dataset = load_model()
+load_dotenv()
+
 loaded_model = dataset["model"]
 loaded_scaler = dataset["scaler"]
 loaded_data = dataset["data"]
@@ -40,10 +43,10 @@ model_evaluation = dataset["model_evaluation"]
 
 def connect_db():
     conn = psycopg2.connect(
-        host="ep-nameless-glade-a1r4rhak-pooler.ap-southeast-1.aws.neon.tech",
-        database="predictcalories",
-        user="neondb_owner",
-        password="npg_aE2r6jWVwTxJ",
+        host=os.getenv("DB_HOST"),
+        database=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
         port="5432",
         sslmode="require"
     )
