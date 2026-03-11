@@ -24,6 +24,7 @@ def load_model():
 dataset = load_model()
 load_dotenv()
 
+
 loaded_model = dataset["model"]
 loaded_scaler = dataset["scaler"]
 loaded_data = dataset["data"]
