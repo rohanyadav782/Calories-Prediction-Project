@@ -116,19 +116,25 @@ elif menu == "Database Records":
 
         # --- SHOW FULL RECORDS ---
         if sub_option == "Show Full Records":
-            cursor.execute("SELECT * FROM predicted_dataset")
-            rows = cursor.fetchall()
-            columns = [desc[0] for desc in cursor.description]
-            df = pd.DataFrame(rows, columns=columns)
-            st.dataframe(df)
-
-            # --- DOWNLOAD BUTTON ---
-            csv = df.to_csv(index=False).encode("utf-8")
-            st.download_button(
-                label="Download Prediction Data",
-                data=csv,
-                file_name="prediction_history.csv",
-                mime="text/csv")
+            password_data = st.text_input("Enter admin password")
+            
+            if password_data == dataset.password:
+                cursor.execute("SELECT * FROM predicted_dataset")
+                rows = cursor.fetchall()
+                columns = [desc[0] for desc in cursor.description]
+                df = pd.DataFrame(rows, columns=columns)
+                st.success("Access Granted")
+                st.dataframe(df)
+    
+                # --- DOWNLOAD BUTTON ---
+                csv = df.to_csv(index=False).encode("utf-8")
+                st.download_button(
+                    label="Download Prediction Data",
+                    data=csv,
+                    file_name="prediction_history.csv",
+                    mime="text/csv")
+            elif password_data != "":
+                st.error("Invalid admin password")
 
             # --- PREDICTION HISTORY CHART ---
             st.subheader(" Calories Distribution Analysis ")
@@ -139,13 +145,13 @@ elif menu == "Database Records":
                 labels = ["0-50", "51-100", "101-150", "151-200", "200+"]
                 df["calorie_group"] = pd.cut(df["calories"], bins=bins, labels=labels)
                 group_counts = df["calorie_group"].value_counts().sort_index()
-
+    
                 # --- BAR CHART ---
                 st.subheader("Calories Range Distribution")
                 bar_df = group_counts.reset_index()
                 bar_df.columns = ["Calories Range", "Count"]
                 st.bar_chart(bar_df.set_index("Calories Range"))
-
+    
                 # --- PIE CHART ---
                 st.subheader("Calories Percentage Distribution")
                 fig, ax = plt.subplots()
