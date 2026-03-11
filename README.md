@@ -51,13 +51,12 @@ Predicted Calories Burned
    - Stored prediction results in PostgreSQL(Cloud)
 
 # Project Structure
-Calories-Prediction-Project/
-│
-├── app.py              # Streamlit web application
-├── dataset.csv         # Dataset used for model training
-├── model.pkl           # Serialized ML model
-├── requirements.txt    # Project dependencies
-└── README.md           # Project documentation
+Calories-Prediction-Project
+ - app.py              # Streamlit web application
+ - dataset.csv         # Dataset used for model training
+ - model.pkl           # Serialized ML model
+ - requirements.txt    # Project dependencies
+ - README.md           # Project documentation
 
 # Tech Stack
  - Python
@@ -69,16 +68,13 @@ Calories-Prediction-Project/
  - Git & GitHub
 
 # How to Run the Project Locally
- - Step 1: Clone the repository
-   git clone https://github.com/rohanyadav782/Calories-Prediction-Project.git
+ - Step 1: Clone the repository: 
+   - git clone https://github.com/rohanyadav782/Calories-Prediction-Project.git
 
- - Step 2: Navigate to the project directory
-   cd Calories-Prediction-Project
- - Step 3: Install required dependencies
-   pip install -r requirements.txt
- - Step 4: Run the Streamlit application
-   streamlit run app.py OR python -m streamlit run app.py
+ - Step 2: Navigate to the project directory:
+   - cd Calories-Prediction-Project
+ - Step 3: Install required dependencies:
+   - pip install -r requirements.txt
+ - Step 4: Run the Streamlit application :
+   - streamlit run app.py OR python -m streamlit run app.py
    
-This description now screams:
-
-✅ Production-ready
