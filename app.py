@@ -29,13 +29,24 @@ feature_coefficient = dataset["Feature_Co-efficient"]
 model_evaluation = dataset["model_evaluation"]
 
 # --- DATABASE CONNECTION ---
+# def connect_db():
+#     conn = psycopg2.connect(
+#         host="localhost",
+#         database="Predict Calorie Expenditure",
+#         user="postgres",
+#         password=os.getenv("DB_PASSWORD"),
+#         port="5432")
+#     return conn
+
 def connect_db():
     conn = psycopg2.connect(
-        host="localhost",
-        database="Predict Calorie Expenditure",
-        user="postgres",
-        password=os.getenv("DB_PASSWORD"),
-        port="5432")
+        host="ep-nameless-glade-a1r4rhak-pooler.ap-southeast-1.aws.neon.tech",
+        database="predictcalories",
+        user="neondb_owner",
+        password="npg_aE2r6jWVwTxJ",
+        port="5432",
+        sslmode="require"
+    )
     return conn
 
 conn = connect_db()
