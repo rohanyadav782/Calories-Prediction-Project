@@ -186,22 +186,15 @@ elif menu == "Predict Calories":
             st.error("Please enter valid ID")
             st.stop()
 
-        cursor.execute(
-            "SELECT * FROM predicted_dataset WHERE person_id = %s",
-            (person_id,)
-        )
-        record = cursor.fetchone()
-        if record:
-            st.warning("This user ID already exists in database")
         else:
             sex = st.selectbox("Gender",["Male","Female"])
             age = st.number_input("Age",20,100)
-            height = st.number_input("Height (cm)",110.0,170.0)
+            height = st.number_input("Height (cm)",110.0,214.0)
             with col2:
                 weight = st.number_input("Weight (kg)",35.0,123.0)
                 duration = st.number_input("Exercise Duration (minutes)",1,40)
-                heart_rate = st.number_input("Heart Rate (BPM)",60.0,100.0)
-                body_temp = st.number_input("Body Temperature (C)",26.0,37.0)
+                heart_rate = st.number_input("Heart Rate (BPM)",60.0,125.0)
+                body_temp = st.number_input("Body Temperature (C)",26.0,41.5)
 
                 if st.button("Predict Calories"):
                     cursor.execute(
