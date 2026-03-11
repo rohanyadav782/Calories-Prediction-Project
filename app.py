@@ -117,25 +117,22 @@ elif menu == "Database Records":
 
         # --- SHOW FULL RECORDS ---
         if sub_option == "Show Full Records":
-            password_data = st.text_input("Enter admin password")
             
-            if password_data == os.getenv("ADMIN_PASSWORD"):
-                cursor.execute("SELECT * FROM predicted_dataset")
-                rows = cursor.fetchall()
-                columns = [desc[0] for desc in cursor.description]
-                df = pd.DataFrame(rows, columns=columns)
-                st.success("Access Granted")
-                st.dataframe(df)
-    
-                # --- DOWNLOAD BUTTON ---
-                csv = df.to_csv(index=False).encode("utf-8")
-                st.download_button(
-                    label="Download Prediction Data",
-                    data=csv,
-                    file_name="prediction_history.csv",
-                    mime="text/csv")
-            elif password_data != "":
-                st.error("Invalid admin password")
+            cursor.execute("SELECT * FROM predicted_dataset")
+            rows = cursor.fetchall()
+            columns = [desc[0] for desc in cursor.description]
+            df = pd.DataFrame(rows, columns=columns)
+            st.success("Access Granted")
+            st.dataframe(df)
+
+            # --- DOWNLOAD BUTTON ---
+            csv = df.to_csv(index=False).encode("utf-8")
+            st.download_button(
+                label="Download Prediction Data",
+                data=csv,
+                file_name="prediction_history.csv",
+                mime="text/csv")
+        
 
             # --- PREDICTION HISTORY CHART ---
             st.subheader(" Calories Distribution Analysis ")
